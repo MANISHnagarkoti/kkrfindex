@@ -1,0 +1,16 @@
+{
+  "name": "t",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+ "dev":"npx tailwindcss -i  tailwind.css -o ./pages/main.css --watch",
+ "prod":"npx tailwindcss -i  tailwind.css -o ./pages/main.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="en" x-data x-cloak>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KKRF- Website | E- commerce | LMS 1 Onshore</title>
+    <link rel="icon" href="../img/logo/title.jpeg">
+
+    <!-- tailwind a -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- a Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+
+        .premium-bg {
+            background: url("../img/premium/pre.webp");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .swiper {
+            width: 100%;
+            /* min-height: 500px; */
+            padding-top: 100px;
+            padding-bottom: 100px;
+            padding-right: 100px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .swiper-slide img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+} */
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #084b7e;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- navbar start -->
+    <div class="bg-white" x-data="{navBar : false }">
+        <!-- {/* {{{{{{{{{{{{desktop menu start}}}}}}}}}}}} */} -->
+        <nav class="container flex justify-between items-center py-3">
+            <a href="index.html">
+                <img src="../img/logo/logo.png" class="w-28" alt="logo" />
+            </a>
+
+            <ul class="gap-5 text-colorTwo h-[50px] items-center hidden lg:flex">
+                <li class="cursor-pointer"><a href="index.html"> Home </a></li>
+
+                <li><a href="about-us.html"> About </a></li>
+
+                <li class="flex gap-2 items-center relative group h-full">
+                    <div class="cursor-pointer group-hover:text-colorThree">
+                        Services
+                    </div>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-3 h-3 transition-all duration-200 group-hover:rotate-180">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+
+                    <ul
+                        class="absolute group-hover:opacity-100 font-medium transition-all duration-200 text-white opacity-0 group-hover:pointer-events-auto pointer-events-none bg-colorTwo w-[200px] bottom-0 z-50 translate-y-full rounded-lg p-6 shadow-2xl space-y-5 text-sm">
+                        <li class="cursor-pointer">
+                            <a href="web-designing.html"> Website Designing </a>
+                        </li>
+
+                        <li class="cursor-pointer mt-4">
+                            <a href="web-development.html"> Website Development </a>
+                        </li>
+
+                        <li class="cursor-pointer mt-4">
+                            <a href="ecommerce-development.html"> E-Commerce </a>
+                        </li>
+
+                        <li class="cursor-pointer mt-4">
+                            <a href="mobile-development.html"> Mobile Development </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="career.html"> Career </a></li>
+            </ul>
+
+            <div class="bg-colorThree px-8 py-3 text-white font-semibold text-xs rounded-full hidden lg:block">
+                <a href="contact-us.html"> Contact us </a>
+            </div>
+
+            <div class="lg:hidden" @click="navBar = true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                    stroke="currentColor" class="w-6 h-6 cursor-pointer">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                </svg>
+            </div>
+        </nav>
+        <!-- {/* {{{{{{{{{{{{desktop menu end}}}}}}}}}}}} */} -->
+
+        <!-- {/* {{{{{{{{{{{{phone menu start}}}}}}}}}}}} */} -->
+        <nav x-show="navBar"
+            class="fixed top-0 left-0 bg-colorTwo shadow-xl text-gray-100 h-screen z-50 w-[300px] py-8 px-3 text-lg transition-all duration-150 lg:hidden">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-semibold text-white">Menu</div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                    @click="navBar = false" stroke="currentColor" class="w-6 h-6 cursor-pointer">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+            </div>
+
+            <ul class="gap-5 h-[50px] items-center space-y-3 mt-6 text-white">
+                <li class="cursor-pointer"><a href="index.html"> Home </a></li>
+
+                <li class="mt-3"><a href="about-us.html"> About </a></li>
+
+                <li class="" x-data="{serviceDisplay : false}">
+                    <div class="flex items-center justify-between cursor-pointer"
+                        @click="serviceDisplay = !serviceDisplay">
+                        <div class="cursor-pointer">Services</div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-4 h-4 cursor-pointer transition-all duration-200"
+                            :class="{ 'rotate-180' : serviceDisplay  }">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                    <ul class="py-3 ms-3 space-y-4 transition-all duration-150 text-sm text-gray-400"
+                        x-show="serviceDisplay" x-transition>
+                        <li class="cursor-pointer">
+                            <a href="web-designing.html"> Website Designing </a>
+                        </li>
+
+                        <li class="cursor-pointer mt-4">
+                            <a href="web-development.html"> Website Development </a>
+                        </li>
+
+                        <li class="cursor-pointer mt-4">
+                            <a href="ecommerce-development.html"> E-Commerce </a>
+                        </li>
+
+                        <li class="cursor-pointer mt-4">
+                            <a href="mobile-development.html"> Mobile Development </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="career.html mt-3"> Career </a></li>
+            </ul>
+        </nav>
+        <!-- {/* {{{{{{{{{{{{phone menu end}}}}}}}}}}}} */} -->
+    </div>
+    <!-- navbar end -->
+
+    <!-- herosection start -->
+    <div class="h-[600px] relative bg-black overflow-hidden" x-data="{formDisplay : true}">
+        <!-- <ThankyouPop pop={pop} setPop={setPop} /> -->
+        <div class="absolute w-full h-full bg-black/50 right-0 left-0">
+            <div class="container grid lg:flex items-center h-full gap-9">
+                <div class="text-4xl md:text-4xl lg:text-6xl text-white font-semibold lg:w-[70%]">
+                    <div class="overflow-hidden py-6">
+                        <div class="herosectionText-gsap">
+                            <span class="text-colorThree text-4xl lg:text-7xl leading-3 font-bold">
+                                Trusted
+                            </span>
+                            by largest brands for Website Designing
+                        </div>
+                    </div>
+                    <button onclick="scrollDown()"
+                        class="bg-colorThree mt-4 px-12 py-3 text-white font-semibold text-lg rounded-lg">
+                        See More
+                    </button>
+                </div>
+
+                <div class="lg:block lg:w-[30%] hidden herosectionForm-gsap overflow-hidden" x-show="formDisplay"
+                    x-cloak>
+                    <div>
+                        <div
+                            class="py-6 px-9 bg-colorTwo text-white rounded-t-lg text-lg font-semibold relative flex justify-between items-center">
+                            <div>Request a callback</div>
+
+                            <svg @click="formDisplay = false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" strokeWidth="{1.5}" stroke="currentColor"
+                                class="w-6 h-6 cursor-pointer">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                        <form class="space-y-6 shadow-2xl w-full bg-white p-9 rounded-b-lg relative">
+                            <div>
+                                <input name="name" placeholder="Name*" type="text" />
+                            </div>
+                            <div>
+                                <input name="mobile" placeholder="Mobile No*" type="number" />
+                            </div>
+                            <div>
+                                <input name="email" placeholder="Email ID*" type="text" />
+                            </div>
+                            <div>
+                                <input name="company" placeholder="Company*" type="text" />
+                            </div>
+                            <div>
+                                <button type="submit"
+                                    class="bg-colorThree mt-4 w-full rounded-xl py-3 text-base text-white font-semibold">
+                                    Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img class="w-full h-full object-cover" src="../img/herosec/herosecbg.webp" alt="background img" />
+    </div>
+    <!-- herosection end -->
+
+    <!-- our states start -->
+    <div class="bg-gradient-to-r from-colorTwo from-40% to-colorTwo/90 to-90% py-9 rounded-b-3xl">
+        <div class="flex mt-4 text-white justify-between gap-9 flex-wrap md:text-2xl container">
+            <div class="">
+                <div class="">
+                    <span class="text-2xl md:text-4xl font-bold text-colorThree">
+                        7
+                    </span>
+                    Years
+                </div>
+                <div>of Experience</div>
+            </div>
+
+            <div>
+                <div>
+                    <span class="text-2xl md:text-4xl font-bold text-colorThree">
+                        400
+                    </span>
+                    +
+                </div>
+                <div>Website delivered</div>
+            </div>
+
+            <div>
+                <div>
+                    <span class="text-2xl md:text-4xl font-bold text-colorThree">
+                        7
+                    </span>
+                    +
+                </div>
+                <div>Countries severed</div>
+            </div>
+        </div>
+    </div>
+    <!-- our states end -->
+
+    <!-- Brands start -->
+    <div class="bg-white rounded-3xl p-4 py-24 overflow-hidden">
+        <div class="text-3xl font-semibold text-center text-colorTwo">
+            <span class="text-colorThree font-semibold"> TRUSTED BY </span>
+            MANY BRANDS
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 justify-items-center gap-y-9 mt-24 items-center brand-gsap">
+            <img src="../img/brands/brand1.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand2.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand3.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand4.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand5.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand6.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand7.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand8.png" class="w-16 sm:w-24 object-contain" alt="img" />
+
+            <img src="../img/brands/brand9.png" class="w-16 sm:w-24 object-contain" alt="img" />
+        </div>
+    </div>
+    <!-- Brands End -->
+
+    <!-- Work start -->
+    <div class="container mt-16" x-data="{active : 'corporate'}">
+        <div class="text-4xl font-semibold">What we do</div>
+        <div class="mt-4 text-gray-600">
+            we were focused on web development and e-commerce solutions for small
+            and mid-size companies.
+        </div>
+
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-24 mt-9">
+            <div class="space-y-2">
+                <div @click="active = 'corporate'" x-cloak
+                    class="p-6 rounded-2xl transition-all duration-300 relative cursor-pointer"
+                    :class="active === 'corporate' && 'bg-gray-100' ">
+                    <div class="flex justify-between gap-4 font-medium">
+                        <div class="text-lg md:text-xl font-semibold">
+                            Corporate Website Designing
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-9 h-9 text-colorTwo">
+                            <path strokeLinecap="round" strokeLinejoin="round"
+                                d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </div>
+
+                    <div class="text-sm opacity-0 text-gray-700 transition-all font-semibold duration-300 overflow-hidden h-0"
+                        :class="active === 'corporate' && 'mt-6 opacity-100 h-36' ">
+                        A corporate website serves as the digital face of a company,
+                        providing a comprehensive overview of its identity, offerings, and
+                        values to various stakeholders. It acts as a central hub for
+                        showcasing products or services, sharing company news and updates,
+                        and facilitating communication with customers, investors, and job
+                        seekers. Corporate websites are meticulously crafted to reflect
+                        the brand's personality and establish credibility, often featuring
+                        sleek designs, compelling content, and user-friendly interfaces.
+                    </div>
+                </div>
+
+                <div @click="active = 'ecommerce'" x-cloak
+                    class="p-6 rounded-2xl transition-all duration-300 relative cursor-pointer"
+                    :class="active === 'ecommerce' && 'bg-gray-100' ">
+                    <div class="flex justify-between gap-4 font-medium">
+                        <div class="text-lg md:text-xl font-semibold">
+                            E-Commerce website
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-9 h-9 text-colorTwo">
+                            <path strokeLinecap="round" strokeLinejoin="round"
+                                d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </div>
+
+                    <div class="text-sm opacity-0 text-gray-700 transition-all font-semibold duration-300 overflow-hidden h-0"
+                        :class="active === 'ecommerce' && 'mt-6 opacity-100 h-36' ">
+                        An e-commerce website is an online platform where businesses sell
+                        their products or services to customers over the internet. It
+                        allows users to browse through a variety of items, make purchases,
+                        and complete transactions entirely online.
+                    </div>
+                </div>
+
+                <div @click="active = 'ideal'" x-cloak
+                    class="p-6 rounded-2xl transition-all duration-300 relative cursor-pointer"
+                    :class="active === 'ideal' && 'bg-gray-100' ">
+                    <div class="flex justify-between gap-4 font-medium">
+                        <div class="text-lg md:text-xl font-semibold">
+                            Idea Based website
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-9 h-9 text-colorTwo">
+                            <path strokeLinecap="round" strokeLinejoin="round"
+                                d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </div>
+
+                    <div class="text-sm opacity-0 text-gray-700 font-semibold transition-all duration-300 overflow-hidden h-0"
+                        :class="active === 'ideal' && 'mt-6 opacity-100 h-36' ">
+                        An idea-based website is a digital platform centered around
+                        sharing and exploring concepts, innovations, or creative thoughts.
+                        Unlike traditional websites that focus on selling products or
+                        providing information, idea-based websites serve as forums for
+                        brainstorming, collaboration, and inspiration.
+                    </div>
+                </div>
+            </div>
+
+            <!-- {/* ///////////////////////////////////////////////////////////////////// */} -->
+
+            <div class="rounded-2xl overflow-hidden relative">
+                <img src="../img/work/w1.jpg" x-cloak
+                    class="object-cover w-full h-[400px] transition-all duration-300 absolute delay-200 opacity-100"
+                    :class="active === 'corporate' && 'opacity-100' " alt="img 1" />
+
+                <img src="../img/work/w2.jpg" x-cloak
+                    class="object-cover w-full h-[400px] transition-all duration-300 absolute delay-200 opacity-0"
+                    :class="active === 'ecommerce' && 'opacity-100' " alt="img 2" />
+
+                <img src="../img/work/w3.jpg" x-cloak
+                    class="object-cover w-full h-[400px] transition-all duration-300 absolute delay-200 opacity-0"
+                    :class="active === 'ideal' && 'opacity-100' " alt="img 1" />
+            </div>
+        </div>
+    </div>
+    <!-- Work end -->
+
+    <!-- Experience start -->
+    <div class="mt-9 bg-colorThree/5 py-8">
+        <div class="container grid lg:flex justify-between items-center">
+            <div class="text-3xl md:text-5xl ex-con-gsap">
+                <div class="overflow-hidden">
+                    <div class="font-semibold ex-word">Let's</div>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="font-semibold ex-word">Create</div>
+                </div>
+                <div class="overflow-hidden">
+                    <div class="font-semibold ex-word">
+                        <span class="text-colorThree font-semibold"> Experience </span>
+                        with us !
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <img src="../img/experiences/message.jpeg" class="hidden md:block md:w-[500px] mix-blend-screen"
+                    alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- Experience end -->
+
+    <!-- serives start -->
+    <div class="overflow-hidden">
+        <div class="bg-gradient-to-r from-colorTwo from-40% to-colorTwo/90 to-90% py-24 rounded-b-2xl service-con-gsap">
+            <div class="text-2xl font-semibold text-center">
+                <div class="text-4xl font-semibold text-center text-gray-100">
+                    <span class="text-colorThree font-semibold"> Ours </span> Services
+                </div>
+                <div class="text-gray-300 mt-4 text-sm max-w-[600px] m-auto" data-aos="fade-up">
+                    We provide a wide range of services to help businesses succeed in
+                    their goals . Our services are designed to meet the unique needs of
+                    each client and are delivered by a team of experienced professionals
+                </div>
+            </div>
+
+            <div class="container grid lg:grid-cols-2 mt-24 gap-9">
+                <div
+                    class="rounded-md p-9 bg- text-black bg-gray-100 shadow-lg border-b-4 border-colorTwo/60 service-one-gsap">
+                    <div>
+                        <div>Innovative</div>
+                        <div class="text-3xl mt-2 font-bold text-colorTwo">
+                            Website Designing
+                        </div>
+                    </div>
+
+                    <div class="text-gray-600 mt-6">
+                        Website design is more than just how your website looks .
+                        Designing a website with good UI and UX principle is first
+                        milestone for a website which can help you to achieve your goals.
+                        <br />
+                        <br />
+                        At the time of designing the wireframes we keep in mind various
+                        elements like, client's industry , targeted geographies , targeted
+                        audience , price points , sales TAT and many other elements
+                    </div>
+
+                    <a href="web-designing.html"
+                        class="bg-colorThree px-8 py-3 text-white font-semibold text-xs rounded-full mt-9 inline-block">
+                        Read more
+                    </a>
+                </div>
+
+                <div
+                    class="rounded-md p-9 text-black bg-gray-100 shadow-lg border-b-4 border-colorTwo/60 service-two-gsap">
+                    <div>
+                        <div>Robust</div>
+                        <div class="text-3xl mt-2 font-bold text-colorTwo">
+                            Website Development
+                        </div>
+                    </div>
+
+                    <div class="text-gray-600 mt-6">
+                        Website development is the process of bringing a website to life .
+                        A good code quality and seamless functionality is required for
+                        great user experience . it includes various processes.
+                        <br />
+                        <br />
+                        We develop website with global standards and with our defined sops
+                        to ensure flawless development to ensure that your website is up
+                        to the mark and optimised for best performance
+                    </div>
+
+                    <a href="web-development.html"
+                        class="bg-colorThree px-8 py-3 text-white font-semibold text-xs rounded-full mt-9 inline-block">
+                        Read more
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services end -->
+
+    <!-- Swiper price section start -->
+    <div x-data="{selectedSide : null}" class="container">
+        <div class="mt-24">
+            <div class="text-4xl font-semibold text-center text-colorTwo">
+                <span class="text-colorThree font-semibold"> Plans & </span>
+                Pricing
+            </div>
+
+            <div data-aos="fade-up" class="max-w-[600px] m-auto mt-8 text-center px-6">
+                We are among India’s best web solution companies committed to offering
+                full ROI-driven customized web services at affordable prices. Due to
+                its excellent e-commerce website and graphics designs, KKRF GROUP is
+                one of the top web development companies in India.
+            </div>
+        </div>
+
+        <div class="swiper mySwiper py-[100px] relative">
+            <div class="h-full bg-gradient-to-l from-white z-[99] from-5% absolute w-[60px] top-0 right-0"></div>
+
+            <div class="swiper-wrapper">
+                <!-- slide one  -->
+                <div class="swiper-slide">
+                    <div class="dark-shadow rounded-3xl border-2 border-gray-400 pb-8">
+                        <div class="bg-colorTwo text-center p-6 py-8 rounded-t-3xl text-white">
+                            <div class="text-xl font-semibold">Standard</div>
+                            <div class="text-xl font-semibold">Plan</div>
+
+                            <div class="text-xl mt-4">
+                                <div class="relative">
+                                    ₹ 10,000/-
+                                    <div
+                                        class="w-[40%] rotate-[-30px] bg-white h-[2px] absolute top-[50%] ms-auto me-auto left-0 right-0">
+                                    </div>
+                                </div>
+
+                                <div>₹ 7,000/-</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center text-black gap-4 mt-8">
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                            <div class="text-center">
+                                <div>Features</div>
+                                <div>Include</div>
+                            </div>
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                        </div>
+
+                        <div class="w-full rounded-xl md:flex justify-between p-4 mt-4 text-xs text-left">
+                            <div>
+                                <div class="space-y-4 font-semibold h-[250px]" x-cloak x-show="selectedSide != 1">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>5 pages Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4 font-semibold" x-cloak x-show="selectedSide === 1">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>5 pages Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Lifetime 24/7 Free Hosting Support</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Unlimited Image & Video Upload</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Free SSL Certificates</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>5 Free work Email id</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>SEO Friendly Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 % Responsive Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Live Chat Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Payment Gateway Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Social Media Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Call Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Whatsapp Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Inquiry Form</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Technical Support For Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Annual Renewal For Hosting Rs. 3000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6 text-sm" x-show="selectedSide != 1">
+                            <div class="m-auto cursor-pointer px-6 py-3 bg-colorThree rounded-xl text-white inline-block"
+                                @click="selectedSide = 1">
+                                Read More
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slide two -->
+                <div class="swiper-slide">
+                    <div class="dark-shadow rounded-3xl premium-bg golden-sha pb-8">
+                        <img src="../img/premium/star.webp"
+                            class="absolute top-[-65px] w-32 m-auto left-0 right-0 ms-auto me-auto" alt="" />
+                        <div class="text-center p-6 py-8 text-white mt-14">
+                            <div class="text-3xl font-semibold">Premium</div>
+                            <div class="text-2xl font-semibold">Plan</div>
+
+                            <div class="text-xl mt-4">
+                                <div class="relative">
+                                    ₹ 17,000/-
+                                    <div
+                                        class="w-[40%] rotate-[-30px] bg-white h-[2px] absolute top-[50%] ms-auto me-auto left-0 right-0">
+                                    </div>
+                                </div>
+
+                                <div>₹ 14,000/-</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center text-white gap-4">
+                            <div class="w-[15%] bg-gray-400 h-[1px]"></div>
+                            <div class="text-center">
+                                <div>Features</div>
+                                <div>Include</div>
+                            </div>
+                            <div class="w-[15%] bg-gray-400 h-[1px]"></div>
+                        </div>
+
+                        <div class="w-full rounded-xl text-xs text-left text-white p-4 mt-4">
+                            <div>
+                                <div class="space-y-4 h-[220px]" x-cloak x-show="selectedSide != 2">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>12 pages Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name (.com .in .org )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4" x-cloak x-show="selectedSide === 2">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>12 pages Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name (.com .in .org )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Google Search Console Setup</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Lifetime Image & Video Upload</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Free SSL Certificates</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 Free work Email id</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>SEO Friendly Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 % Responsive Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Payment Gateway Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Social Media Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Call Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Whatsapp Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Inquiry Form</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Woocommerce Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Technical Support For Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Annual Renewal For Hosting Rs. 3000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6 text-sm" x-show="selectedSide != 2">
+                            <div class="m-auto cursor-pointer px-6 py-3 bg-colorThree rounded-xl text-white inline-block"
+                                @click="selectedSide = 2">
+                                Read More
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slide three -->
+                <div class="swiper-slide">
+                    <div class="dark-shadow rounded-3xl border-2 border-gray-400 pb-8">
+                        <div class="bg-colorTwo text-center p-6 py-8 rounded-t-3xl text-white">
+                            <div class="text-xl font-semibold">CUSTOM</div>
+                            <div class="text-xl font-semibold">Plan</div>
+
+                            <div class="text-xl mt-4">
+                                <div class="relative">₹ ????/-</div>
+
+                                <div>₹ ???/-</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center text-black gap-4 mt-8">
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                            <div class="text-center">
+                                <div>Features</div>
+                                <div>Include</div>
+                            </div>
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                        </div>
+
+                        <div class="w-full rounded-xl text-xs text-left mt-4 p-4">
+                            <div>
+                                <div class="space-y-4 h-[250px]" x-cloak x-show="selectedSide != 3">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Pages: According to requirement</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4" x-cloak x-show="selectedSide === 3">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Pages: According to requirement</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Google Search Console Setup</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Unlimited Image & Video Upload</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Lifetime 24/7 Free Hosting Support</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Free SSL Certificates</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>10 Free work Email id</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>SEO Friendly Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 % Responsive Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Live Chat Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Payment Gateway Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Social Media Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Call Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Whatsapp Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Inquiry Form</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Technical Support For Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Annual Renewal For Hosting Rs. 3000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6 text-sm" x-show="selectedSide != 3">
+                            <div class="m-auto cursor-pointer px-6 py-3 bg-colorThree rounded-xl text-white inline-block"
+                                @click="selectedSide = 3">
+                                Read More
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slide four -->
+                <div class="swiper-slide">
+                    <div class="dark-shadow rounded-3xl relative border-2 border-gray-400 pb-8">
+                        <div class="bg-colorTwo text-center p-6 py-8 rounded-t-3xl text-white">
+                            <div class="text-lg font-semibold">
+                                Premium Design
+                                <div>E-commerce Plan</div>
+                            </div>
+
+                            <div class="text-xl mt-4">
+                                <div class="relative">
+                                    ₹ 25,000/-
+                                    <div
+                                        class="w-[40%] rotate-[-30px] bg-white h-[2px] absolute top-[50%] ms-auto me-auto left-0 right-0">
+                                    </div>
+                                </div>
+
+                                <div>₹ 18,000/-</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center text-black gap-4 mt-8">
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                            <div class="text-center">
+                                <div>Features</div>
+                                <div>Include</div>
+                            </div>
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                        </div>
+
+                        <div class="rounded-2xl p-4 text-xs text-left mt-4">
+                            <div>
+                                <div class="space-y-4 h-[250px]" x-cloak x-show="selectedSide != 4">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>30 pages Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4" x-cloak x-show="selectedSide === 4">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>30 pages Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Lifetime 24/7 Free Hosting Support</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>30 Product Listing From Our Side</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>20 Product Categories</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Google Search Console Setup</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Multi-Vendor Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Premium Design</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>SEO Friendly Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 % Responsive Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Payment Gateway Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Social Media Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Call Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Whatsapp Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Inquiry Form</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Free SSL Certificate</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>10 Free Email ID</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Live Chat Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Ecommerce Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Unlimited Images & Videos Upload</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Product Variation Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Auto Invoice Bill Generator Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Wallet System Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Order Notification Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>OTP Verification Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Technical Support For Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Annual Renewal For Hosting Rs. 4000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6 text-sm" x-show="selectedSide != 4">
+                            <div class="m-auto cursor-pointer px-6 py-3 bg-colorThree rounded-xl text-white inline-block"
+                                @click="selectedSide = 4">
+                                Read More
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slide five -->
+                <div class="swiper-slide">
+                    <div class="dark-shadow rounded-3xl premium-bg golden-sha pb-8">
+                        <img src="../img/premium/star.webp"
+                            class="absolute top-[-65px] w-32 m-auto left-0 right-0 ms-auto me-auto" alt="" />
+                        <div class="text-center p-6 py-8 text-white mt-14">
+                            <div class="text-3xl font-semibold">Premium</div>
+                            <div class="font-semibold text-sm">
+                                Multi Vendor Business & E-commerce Plan
+                            </div>
+
+                            <div class="text-xl mt-6">
+                                <div class="relative">
+                                    ₹ 78,000/-
+                                    <div
+                                        class="w-[40%] rotate-[-30px] bg-white h-[2px] absolute top-[50%] ms-auto me-auto left-0 right-0">
+                                    </div>
+                                </div>
+
+                                <div>₹ 55,000/-</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center text-white gap-4 mt-">
+                            <div class="w-[15%] bg-gray-400 h-[1px]"></div>
+                            <div class="text-center">
+                                <div>Features</div>
+                                <div>Include</div>
+                            </div>
+                            <div class="w-[15%] bg-gray-400 h-[1px]"></div>
+                        </div>
+
+                        <div class="rounded-2xl p-4 text-white text-xs text-left">
+                            <div>
+                                <div class="space-y-4 h-[220px]" x-cloak x-show="selectedSide != 5">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>40 pages Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name (.com .in .org )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>50 Product Categories</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>30 Product Listing From Our Side</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4" x-cloak x-show="selectedSide === 5">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>40 pages Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name (.com .in .org )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>50 Product Categories</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>30 Product Listing From Our Side</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Premium Design</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Google Search Console Setup</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Multi-Vendor Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Lifetime 24/7 Free Hosting Support</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>SEO Friendly Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 % Responsive Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Payment Gateway Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Social Media Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Call Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Whatsapp Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Inquiry Form</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Free SSL Certificate</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>20 Free Email ID</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Live Chat Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Multi-Level Ecommerce Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Unlimited Images & Videos Upload</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Product Variation Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Auto Invoice Bill Generator Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Wallet System Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Order Notification Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>OTP Verification Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Year Free Technical Support For Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Annual Renewal For Hosting Rs. 4000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6 text-sm" x-show="selectedSide != 5">
+                            <div class="m-auto cursor-pointer px-6 py-3 bg-colorThree rounded-xl text-white inline-block"
+                                @click="selectedSide = 5">
+                                Read More
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- slide six -->
+                <div class="swiper-slide">
+                    <div class="dark-shadow rounded-3xl relative border-2 border-gray-400 pb-8">
+                        <div class="bg-colorTwo text-center p-6 py-8 rounded-t-3xl text-white">
+                            <div class="text-base font-semibold">
+                                Custom Multivendor
+                                <div>& Business Plan</div>
+                            </div>
+
+                            <div class="text-xl mt-4">
+                                <div class="relative">₹ ????/-</div>
+
+                                <div>₹ ???/-</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center items-center text-black gap-4 mt-8">
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                            <div class="text-center">
+                                <div>Features</div>
+                                <div>Include</div>
+                            </div>
+                            <div class="w-[20%] bg-gray-300 h-[1px]"></div>
+                        </div>
+
+                        <div class="rounded-2xl p-4 text-xs text-left mt-4">
+                            <div>
+                                <div class="space-y-4 h-[260px]" x-cloak x-show="selectedSide != 6">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Pages: According to requirement</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )e</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-4" x-cloak x-show="selectedSide === 6">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Pages: According to requirement</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Domain Name ( .com .in .org )e</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Hosting ( Unlimited Space )</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Website</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Admin Access</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Google Search Console Setup</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>?? Product Listing From Our Side</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Google Search Console Setup</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Dynamic Multi-Vendor Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Premium Design</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Lifetime 24/7 Free Hosting Support</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>SEO Friendly Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 % Responsive Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Payment Gateway Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Social Media Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Call Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Whatsapp Button Integration</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Inquiry Form</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Free SSL Certificate</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>100 Free Email ID</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Live Chat Integration</div>
+                                    </div>
+
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Multi-Level Ecommerce Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Unlimited Images & Videos Upload</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Product Variation Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Auto Invoice Bill Generator Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Wallet System Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Order Notification Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>OTP Verification Features</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>1 Year Free Technical Support For Website</div>
+                                    </div>
+                                    <div class="flex gap-4 items-center">
+                                        <img src="../img/premium/ttick.webp" class="w-6" alt="" />
+                                        <div>Annual Renewal For Hosting Rs. 4000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center mt-6 text-sm" x-show="selectedSide != 6">
+                            <div class="m-auto cursor-pointer px-6 py-3 bg-colorThree rounded-xl text-white inline-block"
+                                @click="selectedSide = 6">
+                                Read More
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!-- Swiper price section end -->
+
+    <!-- technology start -->
+    <div class="container text-center mt-32 overflow-hidden">
+        <div class="text-4xl text-colorThree font-semibold">Technology</div>
+        <div class="text-lg mt-4 max-w-[500px] m-auto" data-aos="fade-up">
+            At KKRF GROUP , we embrace the ever-evolving world of technology to
+            deliver high-quality solutions.
+        </div>
+
+        <div class="grid grid-cols-4 max-w-[700px] m-auto mt-9 technology-con">
+            <div class="border-e border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/html.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-e border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/micro.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/php.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-s border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/angular.jpg" class="w-24 object-contain" alt="" />
+            </div>
+
+            <div class="border-e border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/jquery.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-e border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/nodejs.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/reactjs.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-s border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/wordpress.webp" class="w-24 object-contain" alt="" />
+            </div>
+
+            <div class="border-e border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/magento.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-e border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/woo.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/shopify.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-s border-b border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/mysql.jpg" class="w-24 object-contain" alt="" />
+            </div>
+
+            <div class="border-e border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/sql.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-e border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/umbraco.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/micro.jpg" class="w-24 object-contain" alt="" />
+            </div>
+            <div class="border-s border-gray-300 flex justify-center items-center p-6">
+                <img src="../img/technology/php.jpg" class="w-24 object-contain" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- technology end -->
+
+    <!-- talk start -->
+    <div class="py-20 bg-colorTwo mt-24" x-data="{show : false}">
+        <div class="text-center text-2xl md:text-4xl text-white">
+            <div class="font-semibold">
+                Let's Talk About Your
+                <span class="text-colorThree font-semibold">Project</span>
+            </div>
+
+
+            <button @click="show = true"
+                class="bg-colorThree mt-12 px-16 py-3 text-white font-semibold text-2xl rounded-lg animate-bounce">
+                Let's Connect
+            </button>
+
+        </div>
+
+
+
+
+        <!-- pop up show  -->
+        <div class="fixed top-0 bg-black/70 w-full h-screen left-0 flex justify-center items-center pointer-events-none z-50 opacity-0 transition-all duration-150"
+            :class=" show && '!opacity-100 pointer-events-auto' ">
+            <div class="w-[300px] lg:w-[30%] transition-all duration-200 scale-90 translate-y-80"
+                :class=" show && '!translate-y-0 !scale-100' ">
+                <div class="bg-white rounded-xl">
+                    <div
+                        class="px-6 md:px-9 pt-6  rounded-t-xl font-semibold relative flex justify-between items-center">
+                        <div class="text-lg md:text-2xl font-semibold mt-2">Let's Connect</div>
+
+                        <div class="bg-gray-300 text-white rounded-full p-1 cursor-pointer " @click="show= false">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                                stroke="currentColor" class="w-5 h-5  ">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                    <form class="space-y-6 shadow-2xl w-full p-9 px-6 md:px-9 rounded-b-xl relative">
+                        <div>
+                            <div>Name</div>
+                            <input name="name" placeholder="Name*" type="text" />
+                        </div>
+                        <div>
+                            <div>phno </div>
+                            <input name="phno" placeholder="phno No*" type="number" />
+                        </div>
+                        <div>
+                            <div>Email</div>
+                            <input name="email" placeholder="Email ID*" type="text" />
+                        </div>
+                        <div>
+                            <div>Query</div>
+                            <textarea name="query" placeholder="Your query"
+                                class="border w-full rounded-lg border-gray-300 p-3 max-h-[150px] min-h-[60px]"></textarea>
+
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="bg-colorThree mt-4 w-full  rounded-xl py-3 text-base text-white font-semibold">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- talk end -->
+
+    <!-- client start -->
+    <div class="mt-24 container">
+        <div class="text-4xl font-semibold text-center text-colorTwo">
+            <span class="text-colorThree font-semibold"> What Our </span>
+            Clients Say
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 mt-9">
+            <div class="border-2 border-colorTwo/20 rounded-2xl shadow-lg">
+                <div class="grid md:flex gap-6 p-9">
+                    <div class="rounded-full overflow-hidden md:w-[30%] h-[120px]">
+                        <img src="../img/client/clientOne.jpeg" class="w-full h-full object-cover" alt="client 1" />
+                    </div>
+
+                    <div class="md:w-[60%]">
+                        <div class="font-bold text-xl text-colorTwo">
+                            <div>Shivam Sharma - Gellete</div>
+                            <div>Amazing Customer Service</div>
+                        </div>
+                        <div class="mt-4 text-gray-600">
+                            It s been an association of more than 7 years with KKRF Group as
+                            our Web and Tech partner. They have Built our website,
+                            E-Commerce platforms and some other digital assets. They provide
+                            seamless solutions and great customer experience.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-2 border-colorTwo/20 rounded-2xl shadow-lg">
+                <div class="grid md:flex gap-6 p-9">
+                    <div class="rounded-full overflow-hidden md:w-[30%] h-[120px]">
+                        <img src="../img/client/clientTwo.jpeg" class="w-full h-full object-cover object-center"
+                            alt="client 2" />
+                    </div>
+
+                    <div class="md:w-[60%]">
+                        <div class="font-bold text-xl text-colorTwo">
+                            <div>Vijay Mishra - Eveready</div>
+                            <div>Happy with Service</div>
+                        </div>
+                        <div class="mt-4 text-gray-600">
+                            KKRF is our web and onshore partner and they are one of the best
+                            in the industry. They have provided exceptional service for our
+                            different vertices; they are good at designing, development,
+                            delivery timelines and competitive prices.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center mt-9">
+            <a href="contact-us.html"
+                class="bg-colorThree mt-12 px-16 py-3 text-white font-medium text-2xl rounded-lg shadow-sm shadow-colorThree">
+                Contact us
+            </a>
+        </div>
+    </div>
+    <!-- client end -->
+
+    <!-- faq start -->
+    <div class="mt-24" x-data="{
+        
+        activeAccordian : null,
+
+        setAccor: function(num) { 
+            if (this.activeAccordian === num){
+
+                this.activeAccordian = null; 
+
+            } else{
+                this.activeAccordian = num; 
+            }
+        }
+    
+    
+    }">
+        <div class="text-4xl font-semibold text-center text-colorTwo">
+            <span class="text-colorThree font-semibold"> Frequently </span>
+            Asked Questions
+        </div>
+
+        <div class="lg:max-w-[70%] px-4 m-auto space-y-6 mt-9">
+            <div @click="setAccor(1)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        How long does it take to design a website ?
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                        :class="activeAccordian == 1 && 'rotate-180'">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+
+                <div x-show="activeAccordian === 1" x-cloak class="mt-4 p-4">
+                    The time it takes to design a website can vary depending on a number
+                    of factors, such as the size and complexity of the website, the
+                    level of customization required, and the availability of content and
+                    other resources. Typically, a standard website with 5-15 pages takes
+                    around 30 days, while a more complex website with custom features
+                    and extensive content may take months to Complete depending on the
+                    scope of work
+                    <br />
+                    At the start of the website design process, we do requirement
+                    gathering and work share a timeline and milestones with the client
+                    to for the project. This will help to ensure that both of us to have
+                    a clear understanding of the scope of the project and the expected
+                    timeline for completion. During the design process, all the teams
+                    work with each other, such as UI & UX team, HTML developer, web
+                    developers and content creators, to ensure that the website is
+                    functional and meets the client’s objectives.
+                </div>
+            </div>
+
+            <div @click="setAccor(2)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Is it custom design or ready-made themes ?
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                        :class="activeAccordian === 2 && 'rotate-180'">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+
+                <div x-show="activeAccordian === 2" x-cloak class="mt-4 p-4">
+                    At KKRF GROUP, we do not work on ready made themes. We create design
+                    from the scratch, starting from mood-board finalisation. We have a
+                    great UI and UX expert who create write frames first and than
+                    artworks.
+                </div>
+            </div>
+
+            <div @click="setAccor(3)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Do you also help in housing. Payment gateway etc ?
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                        :class="activeAccordian === 3 && 'rotate-180'">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+
+                <div x-show="activeAccordian === 3" x-cloak class="mt-4 p-4">
+                    Yes, we offer assistance with housing solutions and integrate
+                    payment gateways into websites.
+                </div>
+            </div>
+
+            <div @click="setAccor(4)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Do you provide support after website delivery ?
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                        :class="activeAccordian === 4 && 'rotate-180'">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </div>
+
+                <div x-show="activeAccordian === 4" x-cloak class="mt-4 p-4">
+                    Yes, as a web development company, we offer ongoing support after
+                    website delivery. Our standard package includes 2 years of
+                    comprehensive service to ensure your website remains functional and
+                    up-to-date.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- faq end -->
+
+    <!-- footer start -->
+    <footer class="bg-colorTwo mt-24 pt-16">
+        <div class="rounded-2xl container">
+            <div class="grid gap-4 md:flex justify-between items-start">
+                <div class="text-xl text-white">
+                    #1 website designing company in Delhi NCR
+                </div>
+
+                <div class="text-colorThree text-lg">
+                    <div>Follow us on</div>
+                    <div class="flex gap-4 text-2xl mt-2">
+                        <a target="_blank"
+                            href="https://www.facebook.com/profile.php?id=61559481387781&mibextid=ZbWKwL">
+                            <ion-icon name="logo-facebook" class="cursor-pointer"></ion-icon>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/groupkkrf?igsh=MWt4OTN4ajM3aHNudA==">
+                            <ion-icon name="logo-instagram" class="cursor-pointer"></ion-icon>
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/company/kkrf-group/">
+                            <ion-icon name="logo-linkedin" class="cursor-pointer"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 mt-9 lg:gap-6 text-gray-200">
+                <div class="space-y-8 font-medium text-lg text-colorThree">
+                    <div>
+                        <div class="underline">info@kkrfgroup.com</div>
+                    </div>
+
+                    <div>
+                        <div>Call us</div>
+                        <div class="flex gap-4 items-center mt-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                class="w-4 h-4">
+                                <path fillRule="evenodd"
+                                    d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                                    clipRule="evenodd" />
+                            </svg>
+                            <div>+91 85 9535 7170</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <ul class="space-y-3 text-lg">
+                        <li class="font-bold text-xl text-white">Company</li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About us</a></li>
+                        <li x-show="window.location.pathname === '/about-us'"><a href="landing.html">Landing Page</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="/">Clients</a></li>
+                        <li><a>Blogs</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a>Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <ul class="space-y-3 text-lg">
+                        <li class="font-bold text-xl text-white">Services</li>
+                        <li><a href="web-designing.html">Website Designing</a></li>
+                        <li><a href="web-development.html">Website Development</a></li>
+                        <li><a href="mobile-development.html">Mobile Development</a></li>
+                        <li>
+                            <a href="ecommerce-development.html">E-commerce website Development</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="border-t border-colorTwo/20 mt-24 py-4 text-gray-400 text-xs font-normal">
+                    Copyright 2017 2024 KKRF Group. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+
+    <!-- timout pop up start -->
+    <div x-data="{pop: false }" x-init="()=>{
+
+        if(!localStorage.getItem('popupShown')){
+            setTimeout(() => {
+                pop = true
+               }, 10000);
+     
+               localStorage.setItem('popupShown', true)
+        }
+
+    }">
+        <div class="fixed top-0 bg-black/70 w-full h-screen left-0 flex justify-center items-center pointer-events-none z-50 opacity-0 transition-all duration-150"
+            :class=" pop && '!opacity-100 pointer-events-auto' ">
+            <div class="w-[300px] lg:w-[30%] transition-all duration-200 scale-90 translate-y-80"
+                :class=" pop && '!translate-y-0 !scale-100' ">
+                <div>
+                    <div
+                        class="px-9 py-6 bg-colorTwo text-white rounded-t-xl text-lg font-semibold relative flex justify-between items-center">
+                        <div>Request a callback</div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
+                            24" strokeWidth="{1.5}" stroke="currentColor" class="w-6 h-6 cursor-pointer"
+                            @click="pop=false">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                    <form class="space-y-6 shadow-2xl w-full bg-white p-9 px-6 md:px-9 rounded-b-xl relative">
+                        <div>
+                            <input name="name" placeholder="Name*" type="text" />
+                        </div>
+                        <div>
+                            <input name="mobile" placeholder="Mobile No*" type="number" />
+                        </div>
+                        <div>
+                            <input name="email" placeholder="Email ID*" type="text" />
+                        </div>
+                        <div>
+                            <input name="company" placeholder="Company*" type="text" />
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="bg-colorThree mt-4 w-full rounded-xl py-3 text-base text-white font-semibold">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- timout pop up end -->
+
+    <!-- widget start -->
+    <div x-init="window.addEventListener('scroll', () => { show = window.scrollY > 400 ? false: true})"
+        x-data="{show:true}"
+        class="fixed space-y-4 bottom-5 right-5 md:hidden opacity-100 transition-all duration-200 translate-y-0 z-[999]"
+        :class="show && 'pointer-events-none !opacity-0 !translate-y-9'">
+        <div class="space-y-4">
+            <a href="tel:+918595357170">
+                <div class="rounded-full shadow-lg p-4 bg-colorTwo text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="contact-us.html">
+                <div class="rounded-full shadow-lg p-4 mt-3 bg-colorTwo text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                            d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- widget end -->
+
+    <!-- Whatsapp start -->
+    <div x-init="window.addEventListener('scroll', () => { show = window.scrollY > 400 ? false: true})"
+        x-data="{show:true}"
+        class="fixed space-y-4 bottom-5 left-5 w-[100px] flex z-40 flex-col items-center opacity-100 transition-all duration-200 translate-y-0"
+        :class="show && ' pointer-events-none !opacity-0 !translate-y-9'">
+        <div class="absolute animate-bounce w-full rounded-lg p-2 text-center top-[-30px] bg-colorTwo text-white">
+            Let's Chat
+            <div class="up-arrow rotate-180 left-0"></div>
+        </div>
+        <a href="https://wa.me/918595357170" target="_blank" rel="noopenner noreferrer">
+            <div class="rounded-full shadow-lg p-4 bg-green-400 text-4xl text-white">
+                <div class="mb-[-6px] text-2xl md:text-4xl">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- Whatsapp end -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap link -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- ioicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- alphine js a -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is <= 499px
+                599: {
+                    slidesPerView: 2,
+                    spaceBetweenSlides: 50,
+                },
+                // when window width is <= 999px
+                999: {
+                    slidesPerView: 4,
+                    spaceBetweenSlides: 50,
+                },
+            },
+        });
+
+
+        //     window.onunload = function() {
+        //     localStorage.removeItem('popupShown');
+        // };
+
+
+
+        // hero section scroll down function
+        const scrollDown = () => {
+            window.scrollTo({
+                top: 750,
+                behavior: "smooth",
+            });
+        };
+
+        // {{{{{{{{{{herosection animation start}}}}}}}}}}
+        gsap.registerPlugin(ScrollTrigger);
+
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".herosectionText-gsap",
+                start: "top 80%",
+                end: "bottom 20%",
+            },
+        });
+
+        tl.from(".herosectionText-gsap", {
+            opacity: 0,
+            duration: 0.5,
+            y: 100,
+            delay: 0.2,
+        }).from(".herosectionForm-gsap", { opacity: 0, duration: 0.5, x: 100 });
+        // {{{{{{{{{{herosection animation end}}}}}}}}}}
+
+        //  {{{{{{{{{{{{states animation start}}}}}}}}}}}}
+        gsap.from(".brand-gsap img", {
+            scrollTrigger: {
+                trigger: ".brand-gsap",
+                start: "-50% 80%",
+                end: "bottom 60%",
+                scrub: 1,
+                // markers:true
+            },
+            duration: 0.5,
+            stagger: 0.3,
+            opacity: 0,
+            y: 100,
+        });
+        //  {{{{{{{{{{{{states animation end}}}}}}}}}}}}
+
+        // Experience animation start
+        gsap.from(".ex-word", {
+            scrollTrigger: {
+                trigger: ".ex-con-gsap",
+                start: "top 80%",
+                end: "bottom 20%",
+            },
+            duration: 0.5,
+            stagger: 0.3,
+            opacity: 0,
+            y: 100,
+        });
+        // Experience animation end
+
+        //  {{{{{{{{{{{{service animation start}}}}}}}}}}}}
+        gsap.from(".service-one-gsap", {
+            scrollTrigger: {
+                trigger: ".service-con-gsap",
+                start: "top 60%",
+                end: "40% 80%",
+                scrub: 1,
+            },
+            duration: 0.5,
+            rotation: -40,
+            ease: "none",
+            opacity: 0,
+            x: -100,
+        });
+
+        gsap.from(".service-two-gsap", {
+            scrollTrigger: {
+                trigger: ".service-con-gsap",
+                start: "top 60%",
+                end: "40% 80%",
+                scrub: 1,
+            },
+            duration: 0.5,
+            rotation: 40,
+            ease: "none",
+            opacity: 0,
+            x: 100,
+        });
+        //  {{{{{{{{{{{{servoce animation end}}}}}}}}}}}}
+
+        // services animation start
+        gsap.from(".technology-con", {
+            scrollTrigger: {
+                trigger: ".technology-con",
+                start: "top 60%",
+                end: "50% 80%",
+                scrub: 1,
+            },
+            duration: 0.5,
+            scale: 1.2,
+            opacity: 0.6,
+        });
+        // services animation end
+    </script>
+</body>
+
+</html>
