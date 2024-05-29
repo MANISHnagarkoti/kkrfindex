@@ -40,6 +40,13 @@ input {
   display: none;
 }
 
+[x-cloak] {
+  display: none;
+}
 
-
-
+.premium-bg {
+  background: url("../img/premium/pre.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
