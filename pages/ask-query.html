@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book demo</title>
+
+    <!-- tailwind a -->
+    <Link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <div >
+
+        <div class="bg-colorTwo  py-8">
+            <h1 class="text-2xl md:text-4xl font-semibold  text-colorThree  container">
+                <span class="text-white font-semibold">Ask your </span> Queries
+            </h1>
+        </div>
+
+        <div class="container">
+            <div class=" mt-24">
+
+                <h1 class="text-2xl md:text-4xl font-semibold">
+                    <div> See what KKRF GROUP </div>
+                    can do for you
+                </h1>
+                <div class="mt-4 text-gray-500">
+                    Tell us a little about your concerns and we’ll reply you with a opinion of
+                    KKRF Expert who can share more about the product and answer any
+                    questions you have so ask all your doubts with which we can do best for us.
+                </div>
+
+
+                <div class="grid lg:grid-cols-2 gap-12 mt-9">
+
+                    <!-- {/* Query field */} -->
+                    <form>
+                        <label>Query</label>
+                        <textarea name="query" placeholder="Your query" value="" onChange={collectData}
+                            class="border w-full rounded-lg border-gray-500 p-3  max-h-[150px] min-h-[60px] mt-2"></textarea>
+
+                        <!-- {/* Submit button */} -->
+                        <button type="submit"
+                            class="bg-colorThree px-8 py-3 text-white font-semibold text-xs rounded-full mt-9 inline-block">
+                            Submit
+                        </button>
+                    </form>
+
+
+
+                    <form>
+                        <label>Query</label>
+                        <textarea name="query" placeholder="Your query" value="" onChange={collectData}
+                            class="border w-full rounded-lg border-gray-500 p-3  max-h-[150px] min-h-[60px] mt-2"></textarea>
+
+                        <!-- {/* Submit button */} -->
+                        <button type="submit"
+                            class="bg-colorThree px-8 py-3 text-white font-semibold text-xs rounded-full mt-9 inline-block">
+                            Submit
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

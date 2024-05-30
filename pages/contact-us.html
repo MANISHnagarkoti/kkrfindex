@@ -25,17 +25,17 @@
 
                 <div class="h-full rounded-lg overflow-hidden mt-9 md:max-w-[600px]">
                     <form onSubmit={submitData} class="space-y-6">
-                  
+
                         <div>
                             <label>Name</label>
-                            <input type="text" class="border border-gray-500 p-3" placeholder="Your name"
-                                name="name" value="" onChange={collectData} />
+                            <input type="text" class="border border-gray-500 p-3" placeholder="Your name" name="name"
+                                value="" onChange={collectData} />
                         </div>
                         <!-- {/* Email field */} -->
                         <div>
                             <label>Email</label>
-                            <input type="text" class="border border-gray-500 p-3" name="email"
-                                placeholder="Your email" value="" onChange={collectData} />
+                            <input type="text" class="border border-gray-500 p-3" name="email" placeholder="Your email"
+                                value="" onChange={collectData} />
                         </div>
                         <!-- {/* Phone field */} -->
                         <div>
@@ -46,9 +46,8 @@
                         <!-- {/* Query field */} -->
                         <div>
                             <label>Query</label>
-                            <textarea name="query" placeholder="Your query" value=""
-                                onChange={collectData}
-                                class="border w-full rounded-lg border-gray-500 p-3"></textarea>
+                            <textarea name="query" placeholder="Your query" value="" onChange={collectData}
+                                class="border w-full rounded-lg border-gray-500 p-3  max-h-[150px] min-h-[60px]"></textarea>
                         </div>
                         <!-- {/* Submit button */} -->
                         <button type="submit"
@@ -69,21 +68,23 @@
                 </div>
 
                 <div class="mt-9 space-y-6">
-                    <div class="flex justify-between border-b border-gray-400 pb-4">
+
+                    <div class="flex justify-between border-b border-gray-400 pb-4 group cursor-pointer">
                         <div>
-                            <div class="text-base font-semibold">Book a Demo</div>
+                            <div class="text-base font-semibold group-hover:text-gray-600">Book a Demo</div>
                             <div class="mt-4 text-gray-500">
                                 Request a demo from one of our conversion specialists.
                             </div>
                         </div>
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-                            stroke="currentColor" class="w-6 h-6 text-gray-500">
+                            stroke="currentColor"
+                            class="group-hover:translate-x-4 transition-all duration-200 w-6 h-6 text-gray-500">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
                     </div>
 
-                    <div class="flex justify-between border-b border-gray-400 pb-4">
+                    <!-- <div class="flex justify-between border-b border-gray-400 pb-4">
                         <div>
                             <div class="text-base font-semibold">Get Inspired</div>
                             <div class="mt-4 text-gray-500">
@@ -96,20 +97,20 @@
                             stroke="currentColor" class="w-6 h-6 text-gray-500">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
-                    </div>
+                    </div> -->
 
-                    <div class="flex justify-between border-b border-gray-400 pb-4">
+                    <div class="flex justify-between border-b border-gray-400 pb-4 group cursor-pointer">
                         <div>
-                            <div class="text-base font-semibold">
+                            <div class="text-base font-semibold group-hover:text-gray-600">
                                 Ask your queries
                             </div>
                             <div class="mt-4 text-gray-500">
-                                Clear all your doubts with which we can do best for us.{" "}
+                                Clear all your doubts with which we can do best for us.
                             </div>
                         </div>
 
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-                            stroke="currentColor" class="w-6 h-6 text-gray-500">
+                            stroke="currentColor" class="group-hover:translate-x-4 transition-all duration-200 w-6 h-6 text-gray-500">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                         </svg>
                     </div>
