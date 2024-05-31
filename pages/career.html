@@ -23,15 +23,36 @@
       </div>
     </div>
 
-    <form action="">
+    <form action="" class="lg:px-44">
       <div class="mt-24 font-bold text-4xl text-colorTwo">
-        <span class="text-colorThree font-bold">Your </span> Resume
+        <span class="text-colorThree font-bold">Your </span> Info
       </div>
+
+
+      <div class="grid md:grid-cols-2 gap-9 mt-8">
+        <input type="text" name="" placeholder="Your Name" id="">
+        <input type="number" name="" placeholder="Your Phno" id="">
+      </div>
+
+      <div class="mt-8">
+        <input type="text" name="" placeholder="Your Current Location" id="">
+      </div>
+
+      <div class="flex items-center gap-2 mt-8">
+        <div>
+          <input class="mt-0"  id="work" type="checkbox" name="">
+        </div>
+        <label  for="work"> Are willing to relocate </label>
+     
+      </div>
+
+
+
       <label id="resume"
         class="border-4 border-dashed animate-pulse border-colorThree/70 rounded-xl text-center p-3 py-6 mt-9 block cursor-pointer">
         <div class="font-bold">"Click to submit resume"</div>
 
-        <input type="file" name="file" class="hidden" id="resume" onChange="{setFile}" />
+        <input type="file" name="file" class="hidden" id="resume" />
       </label>
 
       <div class="flex gap-8 items-center">
