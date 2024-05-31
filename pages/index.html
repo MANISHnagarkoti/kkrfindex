@@ -64,10 +64,12 @@ object-fit: cover;
             color: #fff;
             background: #084b7e;
         }
+
+    
     </style>
 </head>
 
-<body class="antialiased">
+<body class="antialiased ">
     <!-- navbar start -->
     <div class="bg-white" x-data="{navBar : false }">
         <!-- {/* {{{{{{{{{{{{desktop menu start}}}}}}}}}}}} */} -->
@@ -529,7 +531,7 @@ object-fit: cover;
         </div>
 
         <div class="swiper mySwiper py-[100px] relative">
-            <div class="h-full bg-gradient-to-l from-white z-[99] from-5% absolute w-[60px] top-0 right-0"></div>
+            <div class="h-full bg-gradient-to-l from-white z-[99] from-40% absolute w-[30px] top-0 right-0"></div>
 
             <div class="swiper-wrapper">
                 <!-- slide one  -->
@@ -1902,7 +1904,7 @@ object-fit: cover;
             </div>
 
             <div class="gap-9 grid xl:flex mt-9 lg:gap-6 ">
-                <div class="space-y-8 text-lg text-colorThree xl:w-[30%]">
+                <div class="space-y-8 text-lg text-colorTwo xl:w-[30%]">
                     <div>
                         <div class="underline">info@kkrfgroup.com</div>
                     </div>
@@ -1919,7 +1921,7 @@ object-fit: cover;
                             <div>+91 85 9535 7170</div>
                         </div>
                     </div>
-                    <div class="text-colorThree text-lg">
+                    <div class="text-lg">
                         <div>Follow us on</div>
                         <div class="flex gap-4 text-2xl mt-2">
                             <a target="_blank"
@@ -2112,6 +2114,7 @@ object-fit: cover;
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 30,
+            grabCursor: true,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
