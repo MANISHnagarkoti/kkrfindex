@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" x-data x-cloak>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>landing</title>
+
+    <!-- tailwind a -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- a Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        [x-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+
+    <!-- faq start -->
+    <div class="mt-24" x-data="{
+        
+        activeAccordian : null,
+
+        setAccor: function(num) { 
+            if (this.activeAccordian === num){
+
+                this.activeAccordian = null; 
+
+            } else{
+                this.activeAccordian = num; 
+            }
+        }
+    
+    
+    }">
+        <div class="text-4xl font-semibold text-center text-colorTwo">
+            <span class="text-colorThree font-semibold"> Frequently </span>
+            Asked Questions
+        </div>
+
+        <div class="lg:max-w-[70%] px-4 m-auto space-y-6 mt-9">
+            <div @click="setAccor(1)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        What are your charges for website designing services?
+
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 1 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 1" x-cloak class="mt-4 p-4">
+                    Our charges for designing websites depend on the custom needs our clients have and the
+                    scope of every project. Our aim is to deliver value that matches your needs. For an accurate cost
+                    estimate, let's discuss your project in detail.
+                </div>
+            </div>
+
+            <div @click="setAccor(2)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Do you also provide website maintenance services to keep
+                        the website running smoothly and updated?
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 2 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 2" x-cloak class="mt-4 p-4">
+                    Yes, we do provide website maintenance services to keep the website running smoothly in case of
+                    any technical issues
+                </div>
+            </div>
+
+            <div @click="setAccor(3)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Will my website be mobile optimized?
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 3 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 3" x-cloak class="mt-4 p-4">
+                    Yes, your website will be totally optimized for mobile browsing to ensure an amazing user
+                    experience for your mobile-using audience.
+                </div>
+            </div>
+
+            <div @click="setAccor(4)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        What are the important components of a successful website
+                        design?
+
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 4 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 4" x-cloak class="mt-4 p-4">
+                    Some of the most important components of a successful website design are navigation, visual
+                    design, content, information accessibility, intuitiveness, branding, and web friendliness. We bring
+                    together the best versions of all the elements to come up with a design that's a true reflection of
+                    your brand's presence.
+                </div>
+            </div>
+
+
+            <div @click="setAccor(5)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        In what ways does website design influence my site's search
+                        engine rankings?
+
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 5 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 5" x-cloak class="mt-4 p-4">
+                    A website design that's user-friendly fulfills the user's search intent more accurately. A pleasant
+                    website experience leads to higher on-page time, a low bounce rate, and a good engagement
+                    rate that make your website rank higher.
+                </div>
+            </div>
+
+
+            <div @click="setAccor(6)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Can you provide me with some samples of the websites you
+                        have designed?
+
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian === 6 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 6" x-cloak class="mt-4 p-4">
+                    Yes, you can go through some of our sample work to better understand our portfolio. Connect
+                    with us to get a glimpse of our work firsthand.
+                </div>
+            </div>
+
+
+
+            <div @click="setAccor(7)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        What are the industries you have worked with?
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 7 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 7" x-cloak class="mt-4 p-4">
+                    We have experience in a wide range of industries, including:
+                    <br><br>
+                    Manufacturing
+                    <br>
+                    Real Estate
+                    <br>
+                    Education, Healthcare
+                    <br>
+                    Pharmaceuticals
+                    <br>
+                    Law Firms
+                    <br>
+                    Travel
+                    <br>
+                    Interior Design
+                    <br>
+                    B2B
+                    <br>
+                    Yoga
+                    <br>
+                    Fitness Coaching
+                    <br>
+                    Restaurants
+                </div>
+            </div>
+
+
+            <div @click="setAccor(8)"
+                class="bg-gray-200/50 cursor-pointer rounded-xl p-4 py-6 overflow-hidden transition-all duration-200">
+                <div class="font-semibold text-lg flex justify-between items-center gap-4">
+                    <div class="md:text-xl">
+                        Do your services also include designing custom websites?
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}"
+                            stroke="currentColor" class="w-6 h-6 transition-all duration-200"
+                            :class="activeAccordian == 8 && 'rotate-180'">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div x-show="activeAccordian === 8" x-cloak class="mt-4 p-4">
+                    Yes. In fact, we specialize in designing custom websites that align with your unique brand goals.
+                    Our services include custom website design for a personalized online presence.
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- faq end -->
+
+
+    <!-- alphine js a -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+</body>
+
+</html>
