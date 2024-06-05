@@ -2969,6 +2969,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-black\/10 {
+  --tw-gradient-from: rgb(0 0 0 / 0.1) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .from-10\% {
   --tw-gradient-from-position: 10%;
 }
@@ -4269,10 +4275,6 @@ input {
 
   .sm\:w-24 {
     width: 6rem;
-  }
-
-  .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .sm\:underline {
