@@ -1141,6 +1141,10 @@ video {
   height: 1.5rem;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-9 {
   height: 2.25rem;
 }
@@ -1211,10 +1215,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-7 {
-  height: 1.75rem;
 }
 
 .max-h-\[150px\] {
@@ -2935,12 +2935,6 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-black\/10 {
-  --tw-gradient-from: rgb(0 0 0 / 0.1) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-colorThree {
   --tw-gradient-from: #02bab2 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(2 186 178 / 0) var(--tw-gradient-to-position);
@@ -4118,20 +4112,8 @@ video {
   content: var(--tw-content);
 }
 
-.\[bx\:\FFFD\FFFD 1\FFFD\FFFD\FFFD\725\] {
-  bx: ��1���ܥ;
-}
-
-.\[h\:\7F\5\FFFD\1B\FFFD\FFFD\F\FFFD\FFFD\FFFD\64F\FFFD\F\FFFDP\FFFD\FFFD 1\FFFD\FFFD\] {
-  h: ������ُ��P��1��;
-}
-
 .\[wQU\:I\FFFD\FFFD\] {
   w-q-u: I��;
-}
-
-.\[t\:\FFFD\FFFDTT\FFFD\4\FFFDH\FFFD d\FFFD\17Z\EZ\FFFD\>e\] {
-  t: ��TT��H�d�ZZ�>e;
 }
 
 *{
