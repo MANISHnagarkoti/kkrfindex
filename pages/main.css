@@ -1213,6 +1213,10 @@ video {
   height: 100vh;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .max-h-\[150px\] {
   max-height: 150px;
 }
@@ -2096,6 +2100,10 @@ video {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-y-12 {
+  row-gap: 3rem;
 }
 
 .gap-y-8 {
@@ -4116,6 +4124,14 @@ video {
 
 .\[h\:\7F\5\FFFD\1B\FFFD\FFFD\F\FFFD\FFFD\FFFD\64F\FFFD\F\FFFDP\FFFD\FFFD 1\FFFD\FFFD\] {
   h: ������ُ��P��1��;
+}
+
+.\[wQU\:I\FFFD\FFFD\] {
+  w-q-u: I��;
+}
+
+.\[t\:\FFFD\FFFDTT\FFFD\4\FFFDH\FFFD d\FFFD\17Z\EZ\FFFD\>e\] {
+  t: ��TT��H�d�ZZ�>e;
 }
 
 *{
