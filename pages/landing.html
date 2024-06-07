@@ -57,7 +57,7 @@
   <!-- navbar start -->
   <div class="bg-gray-100">
     <nav class="container flex justify-between items-center py-3">
-      <img src="../img/logo/logo.webp" class="w-28 mix-blend-multiply" alt="logo" />
+      <img src="../img/logo/logo.png" class="w-28 mix-blend-multiply" alt="logo" />
 
       <a href="tel:+918595357170">
         <div class="rounded-xl border-2 border-colorTwo flex gap-4 items-center px-6 py-2 cursor-pointer">
@@ -75,25 +75,30 @@
   <!-- navbar end -->
 
   <!-- herosection start -->
-  <div class="h-[500px] lg:h-[600px] relative rounded-b-3xl overflow-hidden" x-data="{show:true}">
+  <div class="h-[800px] xl:h-[600px] relative rounded-b-3xl mt-9 overflow-hidden" x-data="{show:true}" >
     <!-- <ThankyouPop pop={pop} setPop={setPop} /> -->
-    <div class="absolute w-full h-full right-0 left-0 bg-black/40">
-      <div class="container grid lg:flex items-center h-full gap-9">
-        <div class="text-4xl md:text-4xl lg:text-6xl font-bold lg:w-[70%] herosectionText-gsap">
-          <div class="leading-snug  text-white">
+    <div class="absolute w-full h-full right-0 left-0 ">
+      <div class="container grid xl:flex xl:items-center h-full gap-6 xl:gap-9">
+        
+        <div class="text-4xl md:text-4xl lg:text-6xl font-bold lg:w-[70%]  herosectionText-gsap">
+          <div class="leading-snug ">
             <span class="text-4xl lg:text-7xl leading-3 font-semibold text-colorTwo ps-2 bg-colorThree px-2">Trusted</span>
             by largest
             <div class="font-bold">brands for Website</div>
             Designing
           </div>
-          <div class="text-2xl mt-6 text-gray-300 font-semibold">We Implement Your Digital Dreams</div>
+          <div class="text-2xl mt-6 text-gray-700 font-semibold">We Implement Your Digital Dreams</div>
           <button onclick="scrollDown()"
             class="bg-colorTwo mt-4 px-12 py-3 text-white font-semibold text-lg rounded-lg">
             See More
           </button>
         </div>
 
-        <div class="lg:block lg:w-[30%] hidden ">
+        <div class="w-full h-full flex  justify-end  xl:hidden">
+          <img class="w-[100%] md:w-[70%] h-full object-contain object-right-top  " src="../img/Landing/herobgTwo.webp" alt="background img" />
+        </div>
+
+        <div class="xl:block xl:w-[35%] hidden me-12 ">
           <div x-show="show" class="herosectionForm-gsap">
             <div
               class="py-6 px-9 bg-colorThree text-white rounded-t-lg text-lg font-semibold relative flex justify-between items-center " >
@@ -129,7 +134,7 @@
       </div>
     </div>
 
-    <img class="w-full h-full object-cover " src="../img/Landing/herobgTwo.webp" alt="background img" />
+    <img class="w-full h-full object-contain object-right hidden xl:block" src="../img/Landing/herobgTwo.webp" alt="background img" />
   </div>
   <!-- herosection end -->
 

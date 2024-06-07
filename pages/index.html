@@ -1950,7 +1950,6 @@ object-fit: cover;
                     <ul class="space-y-3 text-lg">
                         <li class="font-bold text-xl ">Company</li>
                         <li><a href="about-us.html">About us</a></li>
-                        <li><a href="career.html">Pricing</a></li>
                         <li><a href="/">FAQ's</a></li>
                         <li><a href="contact-us.html">Contact us</a></li>
 
@@ -2054,6 +2053,15 @@ object-fit: cover;
         </div>
     </div>
     <!-- timout pop up end -->
+
+    <!-- remove local storage popup start-->
+    <script>
+        window.addEventListener("beforeunload", function () {
+            localStorage.clear();
+        });
+    </script>
+
+    <!-- remove local storage popup end-->
 
     <!-- widget start -->
     <div x-init="window.addEventListener('scroll', () => { show = window.scrollY > 400 ? false: true})"
